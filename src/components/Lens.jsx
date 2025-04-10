@@ -15,7 +15,7 @@ const Lens = ({ onClose, handleImageUpload }) => {
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setImagePreview(reader.result); // Preview the image inside modal
+                setImagePreview(reader.result); 
             };
             reader.readAsDataURL(file);
         }
@@ -86,9 +86,8 @@ const Lens = ({ onClose, handleImageUpload }) => {
                 <h2 className="text-white text-center text-lg mb-4">Search any image with Google Lens</h2>
 
                 <div
-                    className={`border border-dashed ${
-                        dragActive ? "border-green-500 bg-black/30" : "border-gray-700 bg-black/40"
-                    } p-6 rounded-md text-center transition-all`}
+                    className={`border border-dashed ${dragActive ? "border-green-500 bg-black/30" : "border-gray-700 bg-black/40"
+                        } p-6 rounded-md text-center transition-all`}
                 >
                     {!imagePreview ? (
                         <>
@@ -112,21 +111,21 @@ const Lens = ({ onClose, handleImageUpload }) => {
                             <p className="text-white mt-4 mb-2">OR</p>
 
                             <div className="flex items-center gap-4">
-    <input
-        type="text"
-        placeholder="Paste image link"
-        className="w-full p-2 rounded bg-gray-800 text-white outline-none"
-        value={imageUrl}
-        onChange={(e) => setImageUrl(e.target.value)}
-    />
+                                <input
+                                    type="text"
+                                    placeholder="Paste image link"
+                                    className="w-full p-2 rounded bg-gray-800 text-white outline-none"
+                                    value={imageUrl}
+                                    onChange={(e) => setImageUrl(e.target.value)}
+                                />
 
-    <button
-        className="px-6 py-2 bg-blue-600 text-white rounded"
-        onClick={handlePasteSearch}
-    >
-        Search
-    </button>
-</div>
+                                <button
+                                    className="px-6 py-2 bg-blue-600 text-white rounded"
+                                    onClick={handlePasteSearch}
+                                >
+                                    Search
+                                </button>
+                            </div>
                         </>
                     ) : (
                         <>
